@@ -1,0 +1,10 @@
+packages:
+  - web
+
+overrides:
+  "@nomicfoundation/hardhat-verify>@ethersproject/abi": "npm:ethers@6.17.0"
+  adm-zip: 0.6.0
+  esbuild: 0.28.1
+  lodash-es: 4.18.1
+  undici: 6.27.0
+  ws: 8.21.0

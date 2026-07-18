@@ -1,0 +1,14 @@
+node_modules/
+artifacts/
+cache/
+coverage/
+dist/
+.env
+.DS_Store
+deployment.json
+offchain-services.log
+.playwright-cli/
+output/
+outputs/
+work/
+*.tsbuildinfo

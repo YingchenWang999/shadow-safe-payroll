@@ -1,0 +1,44 @@
+{
+  "name": "shadow-safe-payroll",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Safe-controlled confidential payroll powered by iExec Nox",
+  "scripts": {
+    "compile": "hardhat compile --build-profile production",
+    "commitment": "tsx scripts/commitment.ts",
+    "check:security-overrides": "node scripts/check-security-overrides.js",
+    "deploy:arbitrum-sepolia": "hardhat run scripts/deploy.ts --build-profile production --network arbitrumSepolia",
+    "test": "node scripts/run-nox-tests.js",
+    "test:contracts": "node scripts/run-nox-tests.js test/contracts.test.ts",
+    "check": "pnpm run format:check && pnpm exec tsc --noEmit && pnpm run compile && pnpm run test && pnpm run web:build && pnpm run check:security-overrides && pnpm audit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "web:build": "pnpm --dir web build",
+    "web:dev": "pnpm --dir web dev"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "@iexec-nox/handle": "0.1.0-beta.13",
+    "@iexec-nox/nox-confidential-contracts": "0.2.2",
+    "@iexec-nox/nox-protocol-contracts": "0.2.4",
+    "@openzeppelin/contracts": "5.6.1",
+    "dotenv": "16.6.1",
+    "viem": "2.47.6"
+  },
+  "devDependencies": {
+    "@iexec-nox/nox-hardhat-plugin": "0.1.0",
+    "@nomicfoundation/hardhat-node-test-runner": "3.0.17",
+    "@nomicfoundation/hardhat-toolbox-viem": "5.0.7",
+    "@tsconfig/node22": "22.0.2",
+    "@types/node": "22.19.11",
+    "hardhat": "3.10.0",
+    "prettier": "3.8.1",
+    "prettier-plugin-solidity": "2.3.1",
+    "tsx": "4.23.1",
+    "typescript": "5.8.3"
+  },
+  "packageManager": "pnpm@10.13.1"
+}
