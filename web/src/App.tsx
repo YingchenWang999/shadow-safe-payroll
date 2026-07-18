@@ -40,7 +40,11 @@ function App() {
   const [draftSalt, setDraftSalt] = useState<Hex>(() => createSalt());
   const [claimSalt, setClaimSalt] = useState("");
   const [auditor, setAuditor] = useState("");
-  const [notice, setNotice] = useState("Guided demo is ready. No wallet or funds required.");
+  const [notice, setNotice] = useState(
+    isLive
+      ? "Ethereum Sepolia live mode is ready. Connect the wallet for the selected role."
+      : "Guided demo is ready. No wallet or funds required.",
+  );
   const [isPending, startTransition] = useTransition();
 
   const run = (task: () => Promise<string> | string) => {

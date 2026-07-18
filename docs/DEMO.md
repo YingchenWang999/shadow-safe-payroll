@@ -1,4 +1,4 @@
-# Five-minute demo
+# Four-minute demo
 
 1. Show a Safe holding the demo ERC-7984 confidential asset.
 2. Show the Safe transaction that grants the module a short-lived operator permission.

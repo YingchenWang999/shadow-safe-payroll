@@ -44,6 +44,9 @@ importers:
       '@nomicfoundation/hardhat-toolbox-viem':
         specifier: 5.0.7
         version: 5.0.7(451e9f9581f34d73759489ad7460ed1c)
+      '@safe-global/safe-deployments':
+        specifier: ^1.37.60
+        version: 1.37.60
       '@tsconfig/node22':
         specifier: 22.0.2
         version: 22.0.2
@@ -768,6 +771,10 @@ packages:
 
   '@safe-global/safe-apps-sdk@9.1.0':
     resolution: {integrity: sha512-N5p/ulfnnA2Pi2M3YeWjULeWbjo7ei22JwU/IXnhoHzKq3pYCN6ynL9mJBOlvDVv892EgLPCWCOwQk/uBT2v0Q==}
+
+  '@safe-global/safe-deployments@1.37.60':
+    resolution: {integrity: sha512-PS+VLRm+FikrUNOutsIEE4Ytbtb+O57SHo8VSzYynR7lcSY1gfZ+7DUnKKLVDGCspoJIgh99jqJWGh9eqfn46Q==}
+    engines: {node: '>=22.0.0', pnpm: '>=10.16.0'}
 
   '@safe-global/safe-gateway-typescript-sdk@3.23.1':
     resolution: {integrity: sha512-6ORQfwtEJYpalCeVO21L4XXGSdbEMfyp2hEv6cP82afKXSwvse6d3sdelgaPWUxHIsFRkWvHDdzh8IyyKHZKxw==}
@@ -1944,6 +1951,10 @@ snapshots:
       - typescript
       - utf-8-validate
       - zod
+
+  '@safe-global/safe-deployments@1.37.60':
+    dependencies:
+      semver: 7.8.5
 
   '@safe-global/safe-gateway-typescript-sdk@3.23.1': {}
 

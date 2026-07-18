@@ -34,7 +34,7 @@ const payrollAbi = parseAbi([
   "event PaymentSubmitted(uint256 indexed paymentId, bytes32 indexed recipientCommitment, bytes32 indexed memoHash, uint48 validUntil)",
 ]);
 
-const configuredChain = import.meta.env.VITE_CHAIN ?? "arbitrumSepolia";
+const configuredChain = import.meta.env.VITE_CHAIN ?? "sepolia";
 if (configuredChain !== "arbitrumSepolia" && configuredChain !== "sepolia") {
   throw new Error(`Unsupported VITE_CHAIN: ${configuredChain}`);
 }

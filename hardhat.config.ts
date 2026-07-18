@@ -29,11 +29,11 @@ export default defineConfig({
       chainType: "op",
       allowUnlimitedContractSize: true,
     },
-    arbitrumSepolia: {
+    sepolia: {
       type: "http",
       chainType: "generic",
-      chainId: 421614,
-      url: configVariable("ARBITRUM_SEPOLIA_RPC_URL"),
+      chainId: 11155111,
+      url: configVariable("SEPOLIA_RPC_URL"),
       accounts: [configVariable("DEPLOYER_PRIVATE_KEY")],
     },
   },

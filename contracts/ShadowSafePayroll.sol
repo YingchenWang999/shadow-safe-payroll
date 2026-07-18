@@ -175,6 +175,7 @@ contract ShadowSafePayroll is ReentrancyGuard {
     payment.settledAmount = transferred;
     Nox.allowThis(transferred);
     Nox.allow(transferred, msg.sender);
+    Nox.addViewer(transferred, msg.sender);
 
     emit PaymentClaimed(paymentId, msg.sender);
   }
@@ -189,8 +190,10 @@ contract ShadowSafePayroll is ReentrancyGuard {
     }
 
     Nox.allow(payment.requestedAmount, auditor);
+    Nox.addViewer(payment.requestedAmount, auditor);
     if (Nox.isInitialized(payment.settledAmount)) {
       Nox.allow(payment.settledAmount, auditor);
+      Nox.addViewer(payment.settledAmount, auditor);
     }
     emit AuditorGranted(paymentId, auditor);
   }
@@ -211,7 +214,7 @@ contract ShadowSafePayroll is ReentrancyGuard {
     uint256 paymentId,
     address account
   ) external view returns (bool) {
-    return Nox.isAllowed(_payments[paymentId].requestedAmount, account);
+    return Nox.isViewer(_payments[paymentId].requestedAmount, account);
   }
 
   function canDecryptSettledAmount(
@@ -219,7 +222,7 @@ contract ShadowSafePayroll is ReentrancyGuard {
     address account
   ) external view returns (bool) {
     Payment storage record = _payments[paymentId];
-    return Nox.isInitialized(record.settledAmount) && Nox.isAllowed(record.settledAmount, account);
+    return Nox.isInitialized(record.settledAmount) && Nox.isViewer(record.settledAmount, account);
   }
 
   function computeRecipientCommitment(

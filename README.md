@@ -17,6 +17,10 @@ The recipient address is hidden during submission and approval through a commitm
 claimed, so the intended workflow uses a fresh one-time address. This project does **not** claim full address
 anonymity.
 
+**Live demo:** https://web-three-inky-e6gbchzecf.vercel.app
+
+**Ethereum Sepolia evidence:** [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)
+
 ## What is implemented
 
 - `ShadowSafePayroll`: encrypted payment requests, Safe approval/cancellation, commitment claims, and scoped audit ACLs.
@@ -72,15 +76,30 @@ configured chain.
 
 Use only a fresh test wallet funded with faucet ETH. Never paste a seed phrase into this project.
 
+To create fresh, ignored test-only wallets and bootstrap the complete Safe/token/module stack:
+
+```bash
+pnpm wallets:testnet
+# Fund the printed deployer address with Sepolia faucet ETH.
+pnpm bootstrap:sepolia
+pnpm demo:sepolia
+```
+
+The bootstrap script creates a real 1-of-1 Safe proxy, mints the demo ERC-7984 supply to it, deploys the payroll
+module, and executes the time-bounded operator grant through the Safe. The live demo script then performs and
+decrypts an actual end-to-end Sepolia payment. Generated keys and result files are ignored by Git.
+
+To deploy only the module against existing testnet contracts:
+
 ```bash
 cp .env.example .env
 SAFE_ADDRESS=0x... \
 CONFIDENTIAL_TOKEN_ADDRESS=0x... \
 PAYROLL_MANAGER_ADDRESS=0x... \
-pnpm deploy:arbitrum-sepolia
+pnpm deploy:sepolia
 ```
 
-The deployment preflight requires Arbitrum Sepolia, checks the official NoxCompute deployment, confirms the
+The deployment preflight requires Ethereum Sepolia, checks the official NoxCompute deployment, confirms the
 Safe `VERSION()` interface, and probes the ERC-7984 token interface before deploying. These checks catch common
 configuration mistakes but are not a substitute for verifying every address with the Safe UI and explorer.
 
@@ -103,9 +122,11 @@ Read [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) before evaluating privacy clai
 
 ## Hackathon status
 
-Target: iExec WTF Hackathon Summer Edition, deadline 2026-08-01. Entry is free, but the organizer still needs
-to confirm the exact prize asset, winner allocation, KYC/tax requirements, and whether a testnet deployment is
-sufficient. No mainnet spending is required by this repository.
+Target: iExec WTF Hackathon Summer Edition. The official DoraHacks page shows the submission deadline as
+2026-08-02 05:59 in the browser's displayed timezone and requires an Ethereum Sepolia deployment, a functional
+front end, a public repository, `feedback.md`, and a demo video no longer than four minutes. Entry is free and
+no mainnet spending is required by this repository. The page lists a 1,500 USD prize pool (750 / 500 / 250 USD)
+but does not identify the payout asset or state KYC/tax requirements.
 
 ## License
 

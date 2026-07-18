@@ -9,23 +9,25 @@
 - [x] End-to-end encrypted settlement tests
 - [x] Revoked-operator, replay, expiry, authorization, and manager-rotation regression coverage
 - [x] Web interface with manager, Safe, recipient, and auditor views
-- [ ] Arbitrum Sepolia deployment
-- [ ] Explorer and Safe transaction links
+- [x] Ethereum Sepolia deployment
+- [x] Explorer and Safe transaction links
 
 ## Evidence
 
-- [ ] Public GitHub repository
-- [ ] Passing CI run
-- [ ] Live frontend URL
-- [ ] Short demo recording if required by the final DoraHacks form
-- [ ] Architecture diagram and privacy-boundary explanation
-- [ ] Contract addresses and deployment transaction hashes
-- [ ] Confirm treasury funding and operator expiry before recording the live claim
+- [x] Public GitHub repository
+- [x] Passing CI run
+- [x] Live production frontend URL
+- [x] Demo recording (75 seconds, maximum 4 minutes)
+- [x] Architecture diagram and privacy-boundary explanation
+- [x] `feedback.md` with iExec Nox developer feedback
+- [x] Contract addresses and deployment transaction hashes
+- [x] Confirm treasury funding and operator expiry before recording the live claim
+- [ ] X post with a short description, demo video, public GitHub link, and `@iEx_ec` tag
 
 ## Sponsor confirmations
 
 - [ ] Exact prize currency and payout network
-- [ ] Number of winners and allocation
+- [x] Three winners: 750 / 500 / 250 USD
 - [ ] Whether KYC or tax forms are required
-- [ ] Whether Arbitrum Sepolia is accepted for the final demo
-- [ ] Whether a video is mandatory or optional
+- [x] Ethereum Sepolia is required for the final demo
+- [x] Video is mandatory and must be no longer than 4 minutes

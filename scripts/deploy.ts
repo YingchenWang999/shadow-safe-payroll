@@ -1,8 +1,8 @@
 import { network } from "hardhat";
 import { getAddress, isAddress, parseAbi, type Address } from "viem";
 
-const EXPECTED_CHAIN_ID = 421_614;
-const NOX_COMPUTE_ADDRESS = getAddress("0xd464B198f06756a1d00be223634b85E0a731c229");
+const EXPECTED_CHAIN_ID = 11_155_111;
+const NOX_COMPUTE_ADDRESS = getAddress("0x24Ef36Ec5b626D7DCD09a98F3083c2758F0F77bF");
 const safeAbi = parseAbi(["function VERSION() view returns (string)"]);
 const tokenAbi = parseAbi([
   "function decimals() view returns (uint8)",
@@ -26,7 +26,7 @@ const publicClient = await viem.getPublicClient();
 const chainId = await publicClient.getChainId();
 
 if (chainId !== EXPECTED_CHAIN_ID) {
-  throw new Error(`Expected Arbitrum Sepolia (${EXPECTED_CHAIN_ID}), connected to ${chainId}`);
+  throw new Error(`Expected Ethereum Sepolia (${EXPECTED_CHAIN_ID}), connected to ${chainId}`);
 }
 
 for (const [label, address] of [
