@@ -74,6 +74,9 @@ importers:
       '@safe-global/safe-apps-sdk':
         specifier: 9.1.0
         version: 9.1.0(typescript@5.8.3)(zod@3.25.76)
+      ethers:
+        specifier: 6.17.0
+        version: 6.17.0
       react:
         specifier: 19.2.0
         version: 19.2.0

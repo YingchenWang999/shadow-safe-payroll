@@ -11,6 +11,7 @@
   "dependencies": {
     "@iexec-nox/handle": "0.1.0-beta.13",
     "@safe-global/safe-apps-sdk": "9.1.0",
+    "ethers": "6.17.0",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "viem": "2.47.6"
