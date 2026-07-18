@@ -6,6 +6,7 @@ All assets are test-only and have no monetary value.
 ## Application
 
 - Live frontend: https://web-three-inky-e6gbchzecf.vercel.app
+- X demo video: https://x.com/AOMG123123/status/2078521165006655546
 - Public repository: https://github.com/YingchenWang999/shadow-safe-payroll
 - Network: Ethereum Sepolia (`11155111`)
 

@@ -19,6 +19,8 @@ anonymity.
 
 **Live demo:** https://web-three-inky-e6gbchzecf.vercel.app
 
+**Demo video:** https://x.com/AOMG123123/status/2078521165006655546
+
 **Ethereum Sepolia evidence:** [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)
 
 ## What is implemented

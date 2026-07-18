@@ -22,7 +22,7 @@
 - [x] `feedback.md` with iExec Nox developer feedback
 - [x] Contract addresses and deployment transaction hashes
 - [x] Confirm treasury funding and operator expiry before recording the live claim
-- [ ] X post with a short description, demo video, public GitHub link, and `@iEx_ec` tag
+- [x] X post with a short description, demo video, public GitHub link, and `@iEx_ec` tag
 
 ## Sponsor confirmations
 
